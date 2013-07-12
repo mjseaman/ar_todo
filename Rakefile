@@ -7,6 +7,7 @@ desc "create the database"
 task "db:create" do
   puts "Creating file #{DB_PATH} if it doesn't exist..."
   touch DB_PATH
+  
 end
 
 desc "drop the database"
