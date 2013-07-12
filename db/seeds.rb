@@ -1,5 +1,8 @@
 require_relative '../app/models/task'
 require 'faker'
 
-task = Task.new(description: Faker::Lorem.sentence(5), complete: false)
-task.save
+10.times do
+  task = Task.new(description:Faker::Lorem.sentence(5),complete:false)
+  task.save
+end
+
