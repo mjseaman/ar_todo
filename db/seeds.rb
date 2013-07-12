@@ -1,5 +1,5 @@
-require 'faker'
 require_relative '../app/models/task'
+require 'faker'
 
-task1 = Task.new
-task1.add("something")
+task = Task.new(description: Faker::Lorem.sentence(5), complete: false)
+task.save
