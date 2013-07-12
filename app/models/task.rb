@@ -8,7 +8,7 @@ class Task < ActiveRecord::Base
   end
 
   def self.add(description)
-  
+    
   end
 
   def self.delete(id)
