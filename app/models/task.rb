@@ -10,18 +10,22 @@ class Task < ActiveRecord::Base
   def self.add(description, complete = false)
     task = Task.new(description: description, complete: complete)
     task.save
+    task.description
   end
 
   def self.delete(id)
-    self.delete(id)
+    self.destroy(id)
   end
 
   def delete
-    self.class.delete(self.id)
+    self.class.destroy(self.id)
   end
 
   def self.set_complete(id)
-    self.find(id).complete = true
+    task = self.find(id)
+    task.complete = true
+    task.save
+    self.find(id).description + " COMPLETE!"
   end
 
 end
